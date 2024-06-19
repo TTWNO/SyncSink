@@ -2,7 +2,7 @@
 <project default="syncsink" name="Create the JAR-file">
 
 	<!-- Configuration -->
-	<property name="version" value="1.0" />
+	<property name="version" value="1.1" />
 	
 	<!-- Run the ant timestamp task -->
 	<tstamp />
