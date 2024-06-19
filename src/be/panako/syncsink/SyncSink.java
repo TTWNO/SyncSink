@@ -252,26 +252,19 @@ public class SyncSink {
 		//makes sure number formatting is always the same
 		java.util.Locale.setDefault(Locale.US);
 		
-		javax.swing.SwingUtilities.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-				} catch (Exception e) {
-				}
-				SyncSinkFrame frame = new SyncSinkFrame();
-				frame.setSize(800, 600);
-				frame.setVisible(true);
-				Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
-				frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
-				
-				//add the files
-				int i = 0;
-				for(File file : new Store().getFilesFromArguments(args)){
-					frame.openFile(file,i);
-					i++;
-				}
-			}
-		});		
+		SyncSinkFrame frame = new SyncSinkFrame();
+		//frame.setSize(800, 600);
+		//frame.setVisible(true);
+		//Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
+		//frame.setLocation(dim.width/2-frame.getSize().width/2, dim.height/2-frame.getSize().height/2);
+		
+		//add the files
+		int i = 0;
+		for(File file : new Store().getFilesFromArguments(args)){
+			frame.openFile(file,i);
+			i++;
+		}
+		frame.callSyncBtn();
 	}
 
 }

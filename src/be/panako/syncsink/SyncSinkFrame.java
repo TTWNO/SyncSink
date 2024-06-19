@@ -201,6 +201,11 @@ public class SyncSinkFrame extends JFrame implements ViewPortChangedListener, St
 		logTextField.setText(logTextField.getText() + "\n" + lineToLog);
 		LOG.info(lineToLog);
 	}
+
+	public void callSyncBtn() {
+		String commands = syncSink.synchronizeMedia();
+		logMessage(commands);
+	}
 	
 	private JComponent createStatusBarPanel(){
 		statusBar = new JLabel();
